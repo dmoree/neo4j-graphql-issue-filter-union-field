@@ -1,0 +1,15 @@
+schema: http://localhost:4000/graphql
+config:
+  namingConvention:
+    typeName: keep
+    enumValues: keep
+  scalars:
+    DateTime: string
+generates:
+  ./src/graphql/types/codegen.__generated__.ts:
+    config:
+      contextType: ./context#GraphQLContext
+      skipTypename: true
+    plugins:
+      - typescript
+      - typescript-resolvers
